@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import Checkbox from "expo-checkbox";
-import { View, Text, StyleSheet } from "react-native";
-import Buttons from "./Buttons";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Buttons from "../components/Buttons";
+import AppContext from "../context/AppContext";
 
-function Que4() {
+function Que4({ navigation }: any) {
+  let { testScore, setTestScore }: any = React.useContext(AppContext);
+
   let [opt1, setOpt1] = useState(false);
   let [opt2, setOpt2] = useState(false);
   let [opt3, setOpt3] = useState(false);
   let [opt4, setOpt4] = useState(false);
+
+  function nextQue() {
+    if ((opt1 && opt3) === true) {
+      setTestScore(testScore + 20);
+    }
+    navigation.navigate("Que5");
+  }
+
   return (
     <View>
       <Buttons />
@@ -28,6 +39,10 @@ function Que4() {
         <Checkbox value={opt4} onValueChange={setOpt4} />
         <Text>React is not a full-blown framework as it is only a library</Text>
       </View>
+
+      <TouchableOpacity onPress={nextQue}>
+        <Text>Next</Text>
+      </TouchableOpacity>
     </View>
   );
 }

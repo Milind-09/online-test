@@ -1,12 +1,19 @@
 import React from "react";
-import { View, StyleSheet ,Text} from "react-native";
-import Buttons from "./Buttons";
+import { View, StyleSheet, Text, Button } from "react-native";
+import Buttons from "../components/Buttons";
 
-function Que5() {
+function Que5({navigation}:any) {
+
+  function testResult(){
+    navigation.navigate("Score")
+  }
+
   return (
     <View>
       <Buttons />
-      <Text>Que5</Text>
+      <Text>Q5. Match the following</Text>
+
+      <Button title="submit" onPress={testResult}/>
     </View>
   );
 }

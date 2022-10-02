@@ -6,15 +6,24 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import Buttons from "./Buttons";
+import Buttons from "../components/Buttons";
+import AppContext from "../context/AppContext";
 
 function Que1() {
+  let {  setTestScore }: any = React.useContext(AppContext);
+
   let ans = [
     "Original DOM",
     "Virtual DOM",
     "Both A and B.",
     "None of the above.",
   ];
+
+  function chooseAns(i: any) {
+    if (i === ans[1]) {
+      setTestScore(20);
+    }
+  }
 
   return (
     <View>
@@ -29,7 +38,7 @@ function Que1() {
           return (
             <View key={index}>
               <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => chooseAns(item)}>
                   <Text>{item}</Text>
                 </TouchableOpacity>
               </View>

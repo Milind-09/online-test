@@ -9,15 +9,15 @@ import Que2 from "./screens/Que2";
 import Que3 from "./screens/Que3";
 import Que4 from "./screens/Que4";
 import Que5 from "./screens/Que5";
+import Score from "./screens/Score";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <AppState>
-      <Text>hello</Text>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen
             name="Que1"
@@ -43,6 +43,11 @@ export default function App() {
             name="Que5"
             component={Que5}
             options={{ title: "Questions" }}
+            />
+            <Stack.Screen
+            name="Score"
+            component={Score}
+            options={{ title: "Result" }}
             />
         </Stack.Navigator>
       </NavigationContainer>

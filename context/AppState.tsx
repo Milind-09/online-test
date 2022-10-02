@@ -13,6 +13,9 @@ function AppState({ children }: any) {
     { label: "Hindi", value: "hindi" },
   ]);
 
+
+let [testScore, setTestScore] = useState(0)
+
   return (
     <AppContext.Provider
       value={{
@@ -28,6 +31,7 @@ function AppState({ children }: any) {
         setEmail,
         phone,
         setPhone,
+        testScore, setTestScore
       }}
     >
       {children}
