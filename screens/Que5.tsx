@@ -1,22 +1,42 @@
 import React from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 import Buttons from "../components/Buttons";
+import AppContext from "../context/AppContext";
 
-function Que5({navigation}:any) {
+function Que5({ navigation }: any) {
 
-  function testResult(){
-    navigation.navigate("Score")
+let {setEmail,setName,setPhone,setValue}:any = React.useContext(AppContext)
+
+  function testResult() {
+    navigation.navigate("Score");
+    setName("")
+    setEmail("")
+    setPhone("")
+    setValue("")
   }
 
   return (
     <View>
       <Buttons />
-      <Text>Q5. Match the following</Text>
-
-      <Button title="submit" onPress={testResult}/>
+      <Text style={styles.que}>Q5. Match the following</Text>
+      <View style={styles.btn}>
+        <Button title="submit" onPress={testResult} />
+      </View>
     </View>
   );
 }
 
 export default Que5;
-let styles = StyleSheet.create({});
+let styles = StyleSheet.create({
+  btn: {
+    width: 100,
+    textAlign: "center",
+    marginLeft: "32%",
+    marginTop: 200,
+  },
+  que:{
+    marginLeft:10,
+    marginTop:20,
+    fontSize:20
+  }
+});

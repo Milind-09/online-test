@@ -47,7 +47,7 @@ export default function App() {
             <Stack.Screen
             name="Score"
             component={Score}
-            options={{ title: "Result" }}
+            options={{ title: "Result" }}            
             />
         </Stack.Navigator>
       </NavigationContainer>

@@ -60,7 +60,7 @@ function Home({ navigation }: any) {
         </View>
       </View>
 
-      {(name.length && phone.length && email.length && value.length) !== 0 ? (
+      {(name.length && phone.length && email.length && value.length) === 0 ? (
         <View style={styles.btn}>
           <Button title="Start Test" disabled />
         </View>
@@ -93,7 +93,7 @@ let styles = StyleSheet.create({
   userData: {
     alignItems: "center",
     borderRadius: 15,
-    margin: 20,
+    margin: 10,
     paddingVertical: 50,
     paddingHorizontal: 10,
     backgroundColor: "white",
@@ -105,6 +105,6 @@ let styles = StyleSheet.create({
     width: 150,
     textAlign: "center",
     marginLeft: "27%",
-    marginTop:20,
+    // marginTop:10,
   },
 });
