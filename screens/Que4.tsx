@@ -5,7 +5,7 @@ import Buttons from "../components/Buttons";
 import AppContext from "../context/AppContext";
 
 function Que4({ navigation }: any) {
-  let {value, testScore, setTestScore, setQ4Ans }: any = React.useContext(AppContext);
+  let {getValue, testScore, setTestScore, setQ4Ans }: any = React.useContext(AppContext);
 
   let [opt1, setOpt1] = useState(false);
   let [opt2, setOpt2] = useState(false);
@@ -25,7 +25,7 @@ function Que4({ navigation }: any) {
   return (
     <View>
       <Buttons />
-      {value === "english" ? <View>
+      {getValue === "english" ? <View>
       <Text style={styles.que}>Q4. What are the advantages of React?</Text>
       <View style={styles.flexAns}>
         <Checkbox
@@ -59,7 +59,7 @@ function Que4({ navigation }: any) {
         />
 
         <Text style={styles.ans}>
-          React is not a full-blown framework as it is only {"\n"}a library
+          React is not a full-blown framework as {'\n'}  it is only a library
         </Text>
       </View>
 

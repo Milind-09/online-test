@@ -22,33 +22,33 @@ export default function App() {
           <Stack.Screen
             name="Que1"
             component={Que1}
-            options={{ title: "Questions" }}
-            />
+            options={{ title: "Questions", headerBackVisible:false  }}
+          />
           <Stack.Screen
             name="Que2"
             component={Que2}
-            options={{ title: "Questions" }}
-            />
+            options={{ title: "Questions", headerBackVisible:false  }}
+          />
           <Stack.Screen
             name="Que3"
             component={Que3}
-            options={{ title: "Questions" }}
-            />
+            options={{ title: "Questions", headerBackVisible:false  }}
+          />
           <Stack.Screen
             name="Que4"
             component={Que4}
-            options={{ title: "Questions" }}
-            />
+            options={{ title: "Questions", headerBackVisible:false  }}
+          />
           <Stack.Screen
             name="Que5"
             component={Que5}
-            options={{ title: "Questions" }}
-            />
-            <Stack.Screen
+            options={{ title: "Questions", headerBackVisible:false }}
+          />
+          <Stack.Screen
             name="Score"
             component={Score}
-            options={{ title: "Result" }}            
-            />
+            options={{title:"Results",headerBackVisible:false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />

@@ -8,7 +8,7 @@ function AppState({ children }: any) {
 
   let [open, setOpen] = useState(false);
   let [value, setValue] = useState("");
-  
+  let [getValue, setGetValue] = useState("");
   let [items, setItems] = useState([
     { label: "English", value: "english" },
     { label: "Hindi", value: "hindi" },
@@ -21,7 +21,7 @@ function AppState({ children }: any) {
   let [q5Ans, setQ5Ans] = useState(false);
 
   let [testScore, setTestScore] = useState(0);
-
+  let [getScore, setGetScore] = useState(0);
   return (
     <AppContext.Provider
       value={{
@@ -49,6 +49,9 @@ function AppState({ children }: any) {
         setQ4Ans,
         q5Ans,
         setQ5Ans,
+        getValue,
+        setGetValue,
+        getScore, setGetScore
       }}
     >
       {children}

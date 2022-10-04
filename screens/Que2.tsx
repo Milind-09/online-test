@@ -10,9 +10,9 @@ import Buttons from "../components/Buttons";
 import AppContext from "../context/AppContext";
 
 function Que2({ navigation }: any) {
-  let { value, testScore, setTestScore, setQ2Ans }: any =
+  let { getValue, testScore, setTestScore, setQ2Ans }: any =
     React.useContext(AppContext);
-  if (value === "english") {
+  if (getValue === "english") {
     var ans = ["True", "False"];
   } else {
     var ans = ["सच", "असत्य"];
@@ -29,7 +29,7 @@ function Que2({ navigation }: any) {
   return (
     <View>
       <Buttons />
-      {value === "english" ? (
+      {getValue === "english" ? (
         <View>
           <Text style={styles.que}>
             Q2. State whether true or false Props are methods into other

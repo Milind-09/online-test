@@ -16,10 +16,13 @@ function Home({ navigation }: any) {
     setEmail,
     phone,
     setPhone,
+    
+    setGetValue,
   }: any = React.useContext(AppContext);
 
   function testScreen() {
     navigation.navigate("Que1");
+    setGetValue(value);
   }
 
   return (
@@ -105,6 +108,6 @@ let styles = StyleSheet.create({
     width: 150,
     textAlign: "center",
     marginLeft: "27%",
-    // marginTop:10,
+    marginTop:10,
   },
 });

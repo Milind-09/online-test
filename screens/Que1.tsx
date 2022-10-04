@@ -10,8 +10,8 @@ import Buttons from "../components/Buttons";
 import AppContext from "../context/AppContext";
 
 function Que1({ navigation }: any) {
-  let { value, setTestScore, setQ1Ans }: any = React.useContext(AppContext);
-  if (value === "english") {
+  let { getValue, setTestScore, setQ1Ans }: any = React.useContext(AppContext);
+  if (getValue === "english") {
     var ans = [
       "Original DOM",
       "Virtual DOM",
@@ -38,7 +38,7 @@ function Que1({ navigation }: any) {
   return (
     <View>
       <Buttons />
-      {value === "english" ? (
+      {getValue === "english" ? (
         <View>
           <Text style={styles.que}>
             Q1. What of the following is used in React.js to increase

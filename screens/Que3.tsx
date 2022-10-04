@@ -5,7 +5,7 @@ import Buttons from "../components/Buttons";
 import AppContext from "../context/AppContext";
 
 function Que3({ navigation }: any) {
-  let { value, testScore, setTestScore, setQ3Ans }: any =
+  let { getValue, testScore, setTestScore, setQ3Ans }: any =
     React.useContext(AppContext);
 
   let [inputValue, setInputValue] = useState("");
@@ -23,7 +23,7 @@ function Que3({ navigation }: any) {
   return (
     <View>
       <Buttons />
-      {value === "english" ? (
+      {getValue === "english" ? (
         <View>
           <View style={styles.container}>
             <View style={styles.queContainer}>
@@ -33,8 +33,7 @@ function Que3({ navigation }: any) {
                 onChangeText={(text) => setInputValue(text)}
                 value={inputValue}
               />
-              <Text style={styles.que}>language is written in</Text>
-              <Text>react.js</Text>
+              <Text style={styles.que}>language is written in react.js</Text>
             </View>
             <View style={styles.btn}>
               <Button title="Next" onPress={nextQue} />
@@ -51,8 +50,7 @@ function Que3({ navigation }: any) {
                 onChangeText={(text) => setInputValue(text)}
                 value={inputValue}
               />
-              <Text style={styles.que}>भाषा में लिखा है</Text>
-              <Text>react js</Text>
+              <Text style={styles.que}>भाषा में लिखा है react js</Text>
             </View>
             <View style={styles.btn}>
               <Button title="Next" onPress={nextQue} />
@@ -69,9 +67,10 @@ let styles = StyleSheet.create({
   inputStyle: {
     borderBottomWidth: 1,
     borderBottomColor: "black",
-    width: 120,
+    width: 60,
     marginTop: 8,
     marginLeft: 5,
+    color:"black"
   },
   queContainer: {
     flexDirection: "row",

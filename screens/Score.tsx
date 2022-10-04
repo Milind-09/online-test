@@ -1,11 +1,32 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import React from "react";
 import AppContext from "../context/AppContext";
 import PieChart from "react-native-expo-pie-chart";
-export default function Score() {
-  let { testScore }: any = React.useContext(AppContext);
-  let wrongAns = 100 - testScore;
-  let correctAns = testScore;
+export default function Score({ navigation }: any) {
+
+  let {
+    getScore,
+    setGetScore,
+    setQ1Ans,
+    setQ2Ans,
+    setQ3Ans,
+    setQ4Ans,
+    setQ5Ans,
+  }: any = React.useContext(AppContext);
+
+
+  let wrongAns = 100 - getScore;
+  let correctAns = getScore;
+
+  function home() {
+    navigation.navigate("Home");
+    setGetScore(0);
+    setQ1Ans(false);
+    setQ2Ans(false);
+    setQ3Ans(false);
+    setQ4Ans(false);
+    setQ5Ans(false);
+  }
   return (
     <View style={styles.container}>
       <PieChart
@@ -23,14 +44,17 @@ export default function Score() {
         ]}
         length={150}
       />
+      <View style={[styles.result,{marginTop:70}]}>
+        <View style={styles.green}></View>
+        <Text style={styles.percent}>{correctAns}% Correct Answer</Text>
+      </View>
       <View style={styles.result}>
         <View style={styles.red}></View>
-        <Text style={styles.percent}>{wrongAns}%</Text>
+        <Text style={styles.percent}>{wrongAns}% Wrong Answer</Text>
       </View>
 
-      <View style={styles.result}>
-        <View style={styles.green}></View>
-        <Text style={styles.percent}>{correctAns}%</Text>
+      <View style={styles.btn}>
+        <Button title="Home" onPress={home} />
       </View>
     </View>
   );
@@ -53,10 +77,17 @@ let styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 5,
   },
-  result:{
-    flexDirection:"row"
+  result: {
+    flexDirection: "row",
+   
   },
-  percent:{
-    marginLeft:10,
-  }
+  percent: {
+    marginLeft: 10,
+  },
+  btn: {
+    width: 100,
+    textAlign: "center",
+    marginLeft: "32%",
+    marginTop: 70,
+  },
 });
